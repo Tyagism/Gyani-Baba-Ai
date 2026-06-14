@@ -1,10 +1,10 @@
-# Gyani-Baba 🤖✨
+# Gyani-Baba AI 🤖✨
 
 **Gyani-Baba** is a cutting-edge, multi-page AI application built with **Streamlit** and powered by the **Google Gemini API**. It acts as an advanced AI intelligence suite, offering features ranging from automated document fact-checking using live Google Search Grounding, to AI Search Analytics (GEO), and prompt engineering research.
 
 It features a stunning, custom-built UI utilizing modern **Glassmorphism**, dynamic CSS animations, and highly interactive components that push the boundaries of standard Streamlit design.
 
-https://gyani-baba-ai.streamlit.app/
+Live Project can be checkout/Tested at https://gyani-baba-ai.streamlit.app/
 
 ---
 
