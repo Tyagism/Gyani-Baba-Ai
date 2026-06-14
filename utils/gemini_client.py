@@ -23,9 +23,24 @@ class GeminiClient:
     """Wrapper around the Google GenAI client with convenience methods."""
 
     def __init__(self, api_key: str | None = None):
-        self.api_key = api_key or os.getenv("GOOGLE_API_KEY", "")
+        self.api_key = api_key
+        
         if not self.api_key:
-            raise ValueError("GOOGLE_API_KEY not found. Set it in your .env file.")
+            try:
+                # Try Streamlit Secrets first (for Cloud deployment)
+                if "GOOGLE_API_KEY" in st.secrets:
+                    self.api_key = st.secrets["GOOGLE_API_KEY"]
+                elif "GEMINI_API_KEY" in st.secrets:
+                    self.api_key = st.secrets["GEMINI_API_KEY"]
+            except Exception:
+                pass
+                
+        if not self.api_key:
+            # Fallback to local environment variables
+            self.api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY", "")
+            
+        if not self.api_key:
+            raise ValueError("API Key not found. Set GOOGLE_API_KEY or GEMINI_API_KEY in your .env file or Streamlit Secrets.")
         self.client = genai.Client(api_key=self.api_key)
         self.model = DEFAULT_MODEL
 
