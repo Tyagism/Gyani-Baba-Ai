@@ -5,7 +5,7 @@
 It features a stunning, custom-built UI utilizing modern **Glassmorphism**, dynamic CSS animations, and highly interactive components that push the boundaries of standard Streamlit design.
 
 Live Project can be checkout/Tested at https://gyani-baba-ai.streamlit.app/
-
+https://github.com/user-attachments/assets/48c9661f-1edb-4f64-8168-302f7096d1bd
 ---
 
 ## 🌟 Key Features
